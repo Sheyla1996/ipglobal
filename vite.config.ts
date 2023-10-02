@@ -1,7 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import EnvironmentPlugin from "vite-plugin-environment"
 
-// https://vitejs.dev/config/
+import dotenv from 'dotenv';
+dotenv.config();
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), EnvironmentPlugin("all")],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './setup-test.tsx',
+  },
 })

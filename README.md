@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# Prueba técnica IPGlobal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+La prueba técnica consiste en una webapp sobre un listado de películas obtenido de TheMovieDB. Para el desarrollo de la prueba se debía usar React 18 y Typescript. La prueba debia constar de una página inicial o una página '/search' con un listado de películas y un buscador. Tambíen deberia existir una ruta con las películas que se han valorado en '/mylist' y un detalle de cada película con la información de esta y un formulario para valorar la película.
 
-Currently, two official plugins are available:
+Debido a que el el paso de la API Key de la API ha cambiado su forma de pasarsela, no me funcionaba la API, por lo que decidí añadirle mocks para que funcionará. Al conocer el cambio de la forma de pasar el API Key he vuelto a usar los datos reales, y aún así he dejado los mocks por si se quisieran usar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para la parte de estilos he decidido usar TailwindCSS, en la parte de componentes he decidido crear los mios propios con la inclusión de Storybook. En cuanto a los test, he decidido el uso de Vitest junto a React Testing Library. Además del uso de variables de entorno. Por último para manejar el estado de la web he usado ReduxJS Toolkit.
 
-## Expanding the ESLint configuration
+## Librerias utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* React 18
+* TailwindCSS
+* Storybook
+* Vitest
+* React Testing Library
+* Jest
+* Dotenv
+* ReduxJS Toolkit
+* Redact Redux
 
-- Configure the top-level `parserOptions` property like this:
+## Cómo levantar la web
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+En la raiz del proyecto se pueden ejecutar los siguientes comandos
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### `npm run dev` o `yarn dev`
+
+Inicia el proyecto en modo desarrollo
+
+### `npm run test` o `yarn test`
+
+Ejecuta los test del proyecto
+
+### `npm run storybook` o `yarn storybook`
+
+Ejecuta el storybook de los componentes
+
+### `npm run lint` o `yarn lint`
+
+Ejecuta el lint del proyecto
